@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from './Register.module.css';
-import { Formik, useFormik } from 'formik';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
