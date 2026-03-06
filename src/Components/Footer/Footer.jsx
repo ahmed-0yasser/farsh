@@ -79,7 +79,7 @@ return<>
     </div>
   </section>
   <div className='text-center pb-4"  ;'>
-    E-commerce2024
+    © 2024 Ahmed Yasser, All Rights Reserved
   </div>
   </footer></>
 
