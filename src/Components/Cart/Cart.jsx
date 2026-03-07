@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import style from './Cart.module.css';
+
 import { CartContext } from '../../Context/CartContext';
 import toast from 'react-hot-toast';
 
@@ -44,7 +44,7 @@ export default function Cart() {
 
   useEffect(() => {
     getCart();
-  }, []);
+  }, [getCart]);
 
   if (loading) {
     return (

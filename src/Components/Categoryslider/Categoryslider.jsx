@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from './Categoryslider.css';
+
 
 export default function Categoryslider() {
   const settings = {
@@ -37,7 +37,7 @@ export default function Categoryslider() {
     <div className='py-4'>
     <Slider {...settings}>
       {data?.data.data?.map((category) => (
-        <img key={category._id} src={category.image} className='w-100' height={250}  />
+        <img key={category._id} src={category.image} alt={category.name || ""} className='w-100' height={250}  />
       ))}
     </Slider>
     </div>

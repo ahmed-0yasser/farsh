@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import { Toaster } from 'react-hot-toast';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -11,11 +11,11 @@ import Brands from './Components/Brands/Brands'
 import NotFound from './Components/NotFound/NotFound'
 import Catgories from './Components/Catgories/Catgories'
 import CounterContextProvider from './Context/CounterContext'
-import UserContextProvider, { UserContext } from './Context/UserContext';
+import UserContextProvider from './Context/UserContext';
 import Products from './Components/Products/Products';
 import Layout from './Components/Layout/Layout'
 import Protected from './Components/Protected/Protected'
- import About from './Components/About/About'
+
 import ProdactDitals from './Components/ProdactDitals/ProdactDitals';
 import { CartContextProvider } from './Context/CartContext';
 

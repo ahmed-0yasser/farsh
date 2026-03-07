@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './Footer.module.css'
+
 
 export default function Footer() {
    
@@ -8,11 +8,11 @@ return<>
   <section >
   
     <div className='text-center p-4'>
-      <a className='me-5 text-reset' href=""><i className="fab fa-facebook-f"></i></a>
-      <a className='me-5 text-reset' href=""><i className="fab fa-twitter"></i></a>
-      <a className='me-5 text-reset' href=""><i className="fab fa-google"></i></a>
-      <a className='me-5 text-reset' href=""><i className="fab fa-instagram"></i></a>
-      <a className='me-5 text-reset' href=""><i className="fab fa-linkedin"></i></a>
+      <a className='me-5 text-reset' href="#!"><i className="fab fa-facebook-f"></i></a>
+      <a className='me-5 text-reset' href="#!"><i className="fab fa-twitter"></i></a>
+      <a className='me-5 text-reset' href="#!"><i className="fab fa-google"></i></a>
+      <a className='me-5 text-reset' href="#!"><i className="fab fa-instagram"></i></a>
+      <a className='me-5 text-reset' href="#!"><i className="fab fa-linkedin"></i></a>
     </div>
 
   </section>

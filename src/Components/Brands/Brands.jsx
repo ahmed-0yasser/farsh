@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './Brands.module.css'
+
 import axios from 'axios'
 import { useQuery } from 'react-query'
 
@@ -7,7 +7,7 @@ export default function Brands() {
   let getBrands=()=>{
     return axios.get(`https://ecommerce.routemisr.com/api/v1/Brands`)
   }
-  let {data,isLoading,isError}=useQuery('Brands',getBrands)
+  let {data}=useQuery('Brands',getBrands)
 
   return <>
   <h1>Brands</h1>
