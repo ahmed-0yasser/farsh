@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 export const CartContext = createContext();
 
@@ -7,20 +7,28 @@ export function CartContextProvider(props) {
   const [cartItemsCount, setCartItemsCount] = useState(0);
 
   function getHeaders() {
-    return { token: localStorage.getItem('usertoken') };
+    let token = localStorage.getItem('usertoken');
+    if (token === null || token === 'null' || token === '') {
+        console.warn("CartContext: Token is missing or invalid in localStorage!");
+        token = "";
+    }
+    return { token: token };
   }
 
   async function addToCart(productId) {
     try {
+      console.log("CartContext: Adding to cart, productId:", productId);
       const response = await axios.post(
         `https://ecommerce.routemisr.com/api/v1/cart`,
         { productId: productId },
         { headers: getHeaders() }
       );
+      console.log("CartContext: Add to cart response:", response);
       setCartItemsCount(response.data?.numOfCartItems || 0);
       return response;
     } catch (error) {
-      return error;
+      console.error("CartContext: Add to cart error:", error.response || error);
+      return error.response || error;
     }
   }
 
@@ -33,7 +41,8 @@ export function CartContextProvider(props) {
       setCartItemsCount(response.data?.numOfCartItems || 0);
       return response;
     } catch (err) {
-      return err;
+      console.error("CartContext: Get cart error:", err.response || err);
+      return err.response || err;
     }
   }
 
@@ -46,7 +55,7 @@ export function CartContextProvider(props) {
       setCartItemsCount(response.data?.numOfCartItems || 0);
       return response;
     } catch (error) {
-      return error;
+      return error.response || error;
     }
   }
 
@@ -60,7 +69,7 @@ export function CartContextProvider(props) {
       setCartItemsCount(response.data?.numOfCartItems || 0);
       return response;
     } catch (error) {
-      return error;
+      return error.response || error;
     }
   }
 
@@ -73,7 +82,7 @@ export function CartContextProvider(props) {
       setCartItemsCount(0);
       return response;
     } catch (error) {
-      return error;
+      return error.response || error;
     }
   }
 
